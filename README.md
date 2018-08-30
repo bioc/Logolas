@@ -38,8 +38,9 @@ The most recent version of Logolas available on
 easily installed by running these two commands in R:
 
 ```R
-source("https://bioconductor.org/biocLite.R")
-biocLite("Logolas")
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("Logolas")
 ```
 
 These commands will also install several other packages from CRAN and
@@ -51,8 +52,9 @@ version. The easiest way to accomplish this is using the
 need to first install several packages from Bioconductor:
 
 ```R
-source("https://bioconductor.org/biocLite.R")
-biocLite(c("Biostrings","BiocStyle","Biobase","seqLogo","ggseqlogo"))
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install(c("Biostrings","BiocStyle","Biobase","seqLogo","ggseqlogo"))
 library(devtools)
 install_github("kkdey/Logolas",build_vignettes = TRUE)
 ```

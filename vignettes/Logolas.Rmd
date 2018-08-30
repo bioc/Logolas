@@ -42,8 +42,9 @@ potential applications in a much wider scope of problems.
 The Bioc version of **Logolas** can be installed as follows
 
 ```{r install_logolas_bio, eval=FALSE}
-source("http://bioconductor.org/biocLite.R")
-biocLite("Logolas")
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("Logolas")
 ```
 
 For installing the developmental version of **Logolas** from Github, the user is required to have the `devtools` package and then run the following command.
